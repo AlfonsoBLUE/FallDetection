@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TFG-Monitorizacion</string>
+    <string name="accessibility_service_description">Servicio de accesibilidad TFG-Monitorizacion</string>
+
+    <!--CONFIRMACION DE CAIDA-->
+    <string name="caida_texto">Se ha detectado una caída. ¿Es cierto?</string>
+    <string name="caida_aceptar">SI</string>
+    <string name="caida_cancelar">NO</string>
+
+    <!--CONFIRMACION DE EMERGENCIA-->
+    <string name="emergencia_texto">Se realizará llamada de emergencia.</string>
+    <string name="emergencia_aceptar">ACEPTAR</string>
+    <string name="emergencia_cancelar">CANCELAR</string>
+</resources>

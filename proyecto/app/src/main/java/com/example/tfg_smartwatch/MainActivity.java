@@ -95,6 +95,14 @@ public class MainActivity extends AppCompatActivity {
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                     locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 }
+
+
+                // TODO: FIX NUEVA API
+                // En la nueva API al pedir los permisos se puede seleccionar si dar ubicacion precisa o no
+                // Si NO se da permiso a ubicación precisa no se lanza la aplicación (Error: No se han otorgado permisos)
+                // Si SÍ se da permiso a ubicación precisa tampoco se lanza la aplicacón (Error: No se encuentra un proveedor de GPS disponible)
+                // Posible solución no encontrada: forcé el lanzamiento aunque no se encontrara GPS
+                
                 if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                     Log.d("ERROR", "No se encuentra un proveedor de GPS disponible");
                 } else {

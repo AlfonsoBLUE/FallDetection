@@ -62,6 +62,9 @@ public class AcelerometroSensor {
         if (!iniciado) {
             iniciado = true;
             sensorManager.registerListener(retiradaAcelerometroListener, sensorAcelerometro, SensorManager.SENSOR_DELAY_NORMAL);
+
+            // TODO: FIX NUEVA API
+            // Para poder utilizar SENSOR_DELAY_FASTEST es necesario pedir un nuevo permiso
             sensorManager.registerListener(caidaAcelerometroListener, sensorAcelerometro, SensorManager.SENSOR_DELAY_FASTEST);
         }
     }
@@ -99,6 +102,8 @@ public class AcelerometroSensor {
 
         if (config.isMonitoreoCaidaActivo()) {
             // No es necesario comprobar si ya esta registrado pues lo hace android y no se puede tener dos veces
+            // TODO: FIX NUEVA API
+            // Para poder utilizar SENSOR_DELAY_FASTEST es necesario pedir un nuevo permiso
             sensorManager.registerListener(caidaAcelerometroListener, sensorAcelerometro, SensorManager.SENSOR_DELAY_FASTEST);
         } else {
             sensorManager.unregisterListener(caidaAcelerometroListener);

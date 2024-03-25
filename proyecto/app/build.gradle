@@ -45,6 +45,8 @@ dependencies {
     implementation "androidx.wear:wear-input:1.1.0"
     implementation 'androidx.core:core:1.7.0'
 
+    // TODO: FIX NUEVA API
+    // Necesaria dependencia <implementation 'androidx.work:work-runtime:2.7.1'>
 
 
 }

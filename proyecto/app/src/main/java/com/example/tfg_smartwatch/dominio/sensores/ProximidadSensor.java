@@ -30,6 +30,8 @@ public class ProximidadSensor {
      * Metodo que inicia la monitorizacion del sensor de proximidad.
      */
     public void startProximidad(){
+        // TODO: FIX NUEVA API
+        // Para poder utilizar SENSOR_DELAY_FASTEST es necesario pedir un nuevo permiso
         sensorManager.registerListener(retiradaProximidadListener, sensorProximidad, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
@@ -49,6 +51,8 @@ public class ProximidadSensor {
 
         if (config.isMonitoreoRetiradaActivo()) {
             // No es necesario comprobar si ya esta registrado pues lo hace android y no se puede tener dos veces
+            // TODO: FIX NUEVA API
+            // Para poder utilizar SENSOR_DELAY_FASTEST es necesario pedir un nuevo permiso
             sensorManager.registerListener(retiradaProximidadListener, sensorProximidad, SensorManager.SENSOR_DELAY_FASTEST);
         } else {
             sensorManager.unregisterListener(retiradaProximidadListener);

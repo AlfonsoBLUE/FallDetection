@@ -134,10 +134,18 @@ public class Background extends Service {
      * @return Notificacion
      */
     private Notification crearNotification() {
+        
         RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.notificacion);
         Intent actionIntent = new Intent(this, ReceptorEmergencia.class);
         actionIntent.setAction("com.example.tfg_smartwatch.ACTION");
+
+
+        // TODO: FIX NUEVA API
+        // En la nueva api hay que usar los flags <PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE>
+        // Solucion posible: Un if-else con Build.VERSION.SDK_INT >= 23
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+
         NotificationCompat.Action botonPersonalizado = new NotificationCompat.Action.Builder(
                 R.drawable.ic_launcher_foreground,
                 "EMERGENCIA",
